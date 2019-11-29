@@ -4,8 +4,6 @@ const { parseBasicAuth } = require("../utils");
 
 router.post("/", (req, res) => {
   const { grant_type, client_id, client_secret } = req.body;
-  console.log("req.body: ", req.body);
-  console.log("grant_type: ", grant_type);
   const { authorization } = req.headers;
   let creds = {};
 
@@ -18,10 +16,7 @@ router.post("/", (req, res) => {
   }
 
   if (authorization) {
-      console.log('authorization: ', authorization);
-
     creds = parseBasicAuth(authorization);
-    console.log('creds: ', creds);
   } else if (client_id && client_secret) {
     creds = {
       client_id,

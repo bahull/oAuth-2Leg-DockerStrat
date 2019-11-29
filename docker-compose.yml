@@ -1,0 +1,8 @@
+version: "2.1"
+
+services:
+  oauth-2legged:
+    image: oauth-2legged
+    build: .
+    ports:
+      - 3000:3000

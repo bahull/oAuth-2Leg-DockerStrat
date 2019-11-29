@@ -41,10 +41,7 @@ const getToken = (grant_type, { client_id, client_secret }) => {
 };
 
 const validateToken = access_token => {
-  console.log(data);
-  console.log(access_token, "access");
   const tokenValidity = data.find(curr => curr.access_token === access_token);
-  console.log("tokenValidity: ", tokenValidity);
   if (!tokenValidity) {
     throw `Invalid token`;
   }

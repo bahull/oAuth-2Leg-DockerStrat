@@ -5,15 +5,7 @@ const PORT = 3000;
 
 app.use(json());
 
-app.use(
-  "/",
-  (req, res, next) => {
-    console.log("ERER", req.body);
-    next();
-  },
-  routes
-);
-
+app.use("/", routes);
 
 app.listen(PORT, () => {
   console.log(`Yo, I'm listening in the year ${PORT}`);
